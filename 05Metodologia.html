@@ -1,44 +1,319 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Metodología</title>
-    <link rel="icon" type="image/png" href="Recursos/dom.png">
-    <link rel="stylesheet" href="PROYECTO_CSS.css">
-</head>
+    <link rel="icon" type="image/png" href="Recursos/dom.png" />
+    <link rel="stylesheet" href="PROYECTO_CSS.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>PROYECTO FOTOSÍNTESIS</h1>
-        <p>Av. de la Ilustración, 4, Poblados del Oeste, 46100 Burjassot, Valencia</p>
-        <p>Email: info@ceacfp.com | Teléfono: 963 10 68 10</p>
+      <h1>PROYECTO FOTOSÍNTESIS</h1>
+      <p>
+        Av. de la Ilustración, 4, Poblados del Oeste, 46100 Burjassot, Valencia
+      </p>
+      <p>Email: info@ceacfp.com | Teléfono: 963 10 68 10</p>
     </header>
 
     <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="02Resumen.html">Resumen/Abstract</a></li>
-            <li><a href="03Introduccion.html">Introducción</a></li>
-            <li><a href="04Objetivos.html">Objetivos y Marco Teórico</a></li>
-            <li><a href="05Metodologia.html">Metodología</a></li>
-            <li><a href="06Desarrollo.html">Desarrollo del Proyecto</a></li>
-            <li><a href="07Terminologia.html">Terminología</a></li>
-            <li><a href="08Bibliografia.html">Bibliografía</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="02Resumen.html">Resumen/Abstract</a></li>
+        <li><a href="03Introduccion.html">Introducción</a></li>
+        <li><a href="04Objetivos.html">Objetivos y Marco Teórico</a></li>
+        <li><a href="05Metodologia.html">Metodología</a></li>
+        <li><a href="06Desarrollo.html">Desarrollo del Proyecto</a></li>
+        <li><a href="07Terminologia.html">Terminología</a></li>
+        <li><a href="08Bibliografia.html">Bibliografía</a></li>
+      </ul>
     </nav>
     <!----------------------------------------------------------------->
 
     <main>
-        <section id="metodologia">
-            <h2>Metodología</h2>
-            <p>Descripción de los métodos y técnicas utilizadas.</p>
-        </section>
-    </main>
-<footer>
-    <p>&copy; 2024 Proyecto Intermodular</p>
-</footer>
-</body>
+      <section id="metodologia">
+        <h1>Metodología</h1>
+        <h2>Recopilación de datos</h2>
+        <h3>Ubicación geográfica</h3>
+        <p>
+          La latitud y la longitud determinan la intensidad de radiación UVB. A
+          medida que nos vamos acercando al ecuador, la radiación UVB es más
+          intensa y constante durante el año, y en latitudes más altas la
+          intensidad varía con las estaciones del año.
+        </p>
+        <p>
+          En latitudes cercanas al ecuador (como Ecuador, Colombia, Brasil,
+          etc.), la radiación UVB puede ser más del doble de intensa que en las
+          zonas septentrionales como el norte de Europa. En Quito (Ecuador,
+          latitud 0º), la radiación UVB durante el mediodía en ve rano puede
+          superar los 8 puntos de índice UV, una cifra alta de radiación
+          (Sullivan et al, 2007).
+        </p>
+        <p>
+          En Noruega (latitud 60º), durante el invierno, el índice UV puede ser
+          casi nulo debido a la baja inclinación solar.
+        </p>
+        <p>
+          Para medir el índice real, podemos consultar servicios como la
+          National Weather Service UV Index o plataformas como World Health
+          Organization.
+        </p>
+        <h3><em>TO DO: INSERTAR FIGURA 3</em></h3>
+        <!--TO DO: INSERTAR FIGURA 3-->
+        <h3>Condiciones meteorológicas</h3>
+        <ul>
+          <li>
+            Nubosidad: Un estudio de la American Cancer Society indica que un
+            cielo cubierto de nubes puede reducir la radiación UVB en un 50-70%.
+          </li>
+          <li>
+            Contaminación: En zonas con una gran contaminación como ciudades,
+            los niveles de radiación UVB pueden reducirse hasta en un 30-50%
+            debido a la presencia de partículas y aerosoles en la atmósfera.
+          </li>
+          <li>
+            Altitud: A mayor altitud la radiación UVB es más intensa. En zonas
+            montañosas como los Alpes o los Andes, la radiación puede ser un
+            10-15% más fuerte por cada 1000 metros de altitud.
+          </li>
+        </ul>
+        <p>
+          Las APIs meteorológicas como OpenWeatherMap o Meteostat proporcionan
+          información detallada sobre nubosidad y la calidad del aire.
+        </p>
 
+        <h3>Hora y fecha</h3>
+        <p>
+          La radiación es más intensa en las horas centrales del día (10:00 a
+          16:00) y en los meses de verano. En invierno la radiación puede ser
+          muy baja debido a la inclinación de la Tierra y la proximidad al sol.
+        </p>
+        <p>
+          Durante el mediodía, el índice UV en una ciudad tropical como Ciudad
+          de Panamá puede superar los 11 puntos, mientras que en Londres puede
+          ser inferior a 3 puntos durante el invierno. En zonas cercanas a los
+          polos, el índice puede llegar a ser nulo en invierno. Ciudades como
+          Reikiavik (Islandia) pueden tener un índice cercano a 0 durante los
+          meses de diciembre y enero (WHO, 2019).
+        </p>
+        <p>
+          World Health Organization (WHO) proporciona mapas globales del índice
+          UV en fun ción de la hora y la estación.
+        </p>
+
+        <h3>Tipo de piel</h3>
+        <p>
+          El fototipo cutáneo de una persona es un factor crítico para
+          determinar cuánto tiempo de exposición solar es necesario para
+          sintetizar una cantidad adecuada de vitamina D. Se clasifica según la
+          escala de Fitzpatrick, que varía del fototipo I (piel muy clara) al
+          fototipo VI (piel muy oscura).
+        </p>
+        <p>
+          Las personas con piel clara (fototipo I y II) producen más rápido
+          vitamina D y requieren menos tiempo de exposición. Una persona con
+          fototipo I necesita solo 5-10 minutos de exposición al sol en verano
+          para sinterizar una cantidad adecuada de vitamina D.
+        </p>
+        <p>
+          Las personas con piel oscura (fototipo IV-VI) necesitan de 15 a 30
+          minutos más de expo sición para sintetizar la misma cantidad de
+          vitamina D debido a su mayor cantidad de melanina, que actúa como un
+          protector natural (Hollis, 2007).
+        </p>
+        <p>
+          Fitzpatrick, T.B. (1988) es la referencia estándar para los fototipos
+          de piel. La clasifica ción es ampliamente utilizada en dermatología y
+          estudios de radiación UV.
+        </p>
+        <h3>Vestimenta y protector solar</h3>
+        <p>
+          La ropa puede llegar a bloquear hasta el 99% de la radiación UVB. Los
+          protectores solares con un SPF 30 bloquean aproximadamente el 97% de
+          la radiación UVB, esto puede re ducir mucho la capacidad de sintetizar
+          la vitamina D.
+        </p>
+        <p>
+          La ropa con clasificación de UPF (factor de protección ultravioleta)
+          50+ bloquea casi toda la radiación UVB.
+        </p>
+        <p>
+          Un estudio de la American Academy of Dermatology indica que el uso de
+          protector solar con SPF 30 puede reducir la síntesis de vitamina D en
+          un 95%, esto significa que, durante el uso del protector solar, la
+          síntesis cutánea es cercana a 0.
+        </p>
+        <p>
+          American Academy of Dermatology (AAD) menciona la efectividad de los
+          protectores solares y la vestimenta para bloquear la radiación UV.
+        </p>
+        <br /><br />
+      </section>
+
+      <section>
+        <article>
+          <h1>Uso de APIs de geolocalización y climatología</h1>
+          <h2>APIs de geolocalización</h2>
+          <p>
+            Permiten obtener la latitud y la longitud del usuario en tiempo
+            real, disponemos de diferentes APIs:
+          </p>
+          <ul>
+            <li>
+              <strong>Google Maps API (Google Maps Platform):</strong>
+              <ul>
+                <li>
+                  Proporciona coordenadas geográficas precisas (latitud y
+                  longitud) del usuario basadas en la ubicación del dispositivo.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>OpenCage Geocoder API (OpenCage):</strong>
+              <ul>
+                <li>
+                  Gratuita y de código abierto para obtener datos de
+                  geolocalización.
+                </li>
+                <li>
+                  Permite convertir direcciones en coordenadas y viceversa.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>IP Geolocation API (ip-api):</strong>
+              <ul>
+                <li>Geolocalización basada en la dirección IP del usuario.</li>
+              </ul>
+            </li>
+          </ul>
+          <br />
+        </article>
+        <article>
+          <h2>APIs de climatología y radiación UVB</h2>
+          <p>
+            Permiten acceder a datos en tiempo real sobre el clima y la
+            radiación UVB.
+          </p>
+          <ul>
+            <li>
+              <strong>OpenWeatherMap API (OpenWeather):</strong>
+              <ul>
+                <li>
+                  Proporciona datos meteorológicos en tiempo real, incluyendo
+                  nubosidad, temperatura y radiación UV.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Tomorrow.io API (Tomorrow.io):</strong>
+              <ul>
+                <li>
+                  Ofrece datos climáticos avanzados, incluyendo pronósticos de
+                  radiación UV y condiciones atmosféricas que pueden afectar la
+                  exposición al sol.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>WeatherAPI.com (WeatherAPI): </strong>
+              <ul>
+                <li>
+                  Información detallada sobre el índice UV, temperatura, humedad
+                  y condi ciones meteorológicas.
+                </li>
+                <li>Fácil de integrar con aplicaciones móviles y web.</li>
+              </ul>
+            </li>
+          </ul>
+          <br />
+        </article>
+        <article>
+          <h2>Calcular la exposición UVB</h2>
+          <p>
+            Para poder estimar la cantidad de radiación que impacta en la piel,
+            debemos combinar la información obtenida de las APIs anteriores:
+          </p>
+          <ol>
+            <li>
+              Obtener la ubicación del usuario con Google Maps API o OpenCage
+              API.
+            </li>
+            <br />
+            <li>
+              Consultar la radiación UV en tiempo real con OpenWeatherMap API o
+              Tomo rrow.io API.
+            </li>
+            <br />
+            <li>
+              Aplicar los cálculos teniendo en cuenta la hora del día, la
+              estación del año, la nubosidad y la contaminación atmosférica.
+            </li>
+            <br />
+            <li>
+              Calcular la dosis de vitamina D sintetizada dependiendo del tipo
+              de piel, el tiempo de exposición y la vestimenta del usuario.
+            </li>
+          </ol>
+        </article>
+      </section>
+      <section>
+        <br />
+        <h1>Procesamiento y recomendaciones</h1>
+        <p>
+          Una vez obtenidos los datos es necesario procesarlos para estimar la
+          cantidad de radiación UVB recibida y calcular la síntesis de vitamina
+          D. Con esto, podemos prevenir la defi ciencia de vitamina D y el
+          riesgo de sobreexposición.
+        </p>
+        <h2>Procesamiento de datos</h2>
+        <p>
+          Para procesar los datos, es necesaria obtener la información que nos
+          proporcionan las Apis mencionadas en el punto anterior teniendo en
+          cuenta las variables ambientales, además, se tendrá en cuenta las
+          características individuales como el fototipo de piel, la vestimenta,
+          el uso de protector solar y el tiempo de exposición acumulado.
+        </p>
+        <h3>Cálculo de la síntesis de vitamina D</h3>
+        <p>
+          Para estimar la cantidad de vitamina D sintetizada, se puede utilizar
+          un modelo basado en estudios previos. Según Holick (2007), la
+          exposición de brazos y cara durante 5 a 30 minutos en condiciones
+          óptimas puede generar entre 10,000 (250 microgramos) y 25,000 (625
+          microgramos) UI de vitamina D en pieles claras.
+        </p>
+        <p>
+          Se pueden aplicar ecuaciones para calcular la dosis UVB efectiva según
+          la latitud, el índice UV y el área de piel expuesta.
+        </p>
+        <h3>Recomendaciones personalizadas</h3>
+        <p>
+          Después de procesar los datos, la aplicación puede generar
+          recomendaciones al usuario según las necesidades.
+        </p>
+        <p>
+          Si el usuario no está exponiéndose a la luz solar durante uno o varios
+          días, la aplicación mandará mensajes de alerta indicando al usuario
+          que debería exponerse dentro de los límites marcados en función de los
+          datos que proporcione el usuario a la aplicación sobre su fototipo de
+          piel, vestimenta o si está usando protector solar.
+        </p>
+        <p>
+          Por otro lado, también se generarán avisos cuando el usuario esté
+          recibiendo un exceso de radiación UV, indicando al usuario que se
+          cubra del sol, o que utilice protector solar para prevenir
+          enfermedades debido a la sobreexposición.
+        </p>
+        <p>
+          El sistema puede incluir un historial de la dieta seguida por el
+          usuario y la exposición, de esta manera podemos obtener datos mucho
+          más precisos de la cantidad de vitamina D.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Proyecto Intermodular</p>
+    </footer>
+  </body>
 </html>

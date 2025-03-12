@@ -7,43 +7,35 @@ body {
 }
 
 header {
-    height: 150px;
+    height: auto;
+    min-height: 120px;
     background: linear-gradient(to bottom, #322400, #ffbf00);
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
     color: white;
-    font-size: 2em;
 }
 
 /* Título principal */
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
-    font-family:'Times New Roman', Times, serif ;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-family: 'Times New Roman', Times, serif;
 }
 
 header p {
     margin: 0.5rem 0 0;
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
     color: white;
     font-family: cursive;
 }
 
 /* Barra de navegación */
 nav {
-    height: 30px;
+    height: auto;
     background: #ffbf00;
     padding: 0.5rem;
-    align-items: center;
     color: white;
-    font-size: 1.2em;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 15px;
-    transition: background 0.3s ease, color 0.3s ease;
 }
 
 nav ul {
@@ -52,10 +44,11 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0.5rem;
 }
 
 nav ul li a {
@@ -64,28 +57,31 @@ nav ul li a {
     font-size: 1rem;
     font-weight: bold;
     transition: color 0.3s;
+    display: block;
+    padding: 0.3rem 0.5rem;
 }
 
 nav ul li a:hover {
     color: #b59100;
 }
+
 /* Seccion de la imagen */
 .sol {
     position: relative;
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 1rem auto 2rem;
+    width: 90%;
+    max-width: 800px;
 }
 
 .sol-imagen {
     width: 100%;
-    height: 5%;
+    height: auto;
     max-height: 750px;
-    max-width: 800px;
     border-radius: 30px;
     margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .sol-contenido {
     position: absolute;
@@ -98,13 +94,13 @@ nav ul li a:hover {
 }
 
 .sol-contenido h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .sol-contenido p {
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
     margin: 0;
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -112,9 +108,10 @@ nav ul li a:hover {
 
 /*Pagina principal*/
 main {
-    padding: 2rem;
+    padding: 1.5rem;
+    width: 90%;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 0 auto 5rem;
     background: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -125,7 +122,7 @@ section {
 }
 
 section h1 {
-    font-size: 1.75rem;
+    font-size: clamp(1.4rem, 4vw, 1.75rem);
     border-bottom: 2px solid #070700;
     padding-bottom: 0.5rem;
     color: #f8c00b;
@@ -142,7 +139,8 @@ section ul {
     text-align: center;
     margin: 20px auto;
     padding: 5%;
-    width: 80%;
+    width: 90%;
+    max-width: 600px;
     background: linear-gradient(135deg, #ffbf00, #dea004);
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -150,11 +148,13 @@ section ul {
 
 .indice a {
     color: #fff;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: clamp(1rem, 3vw, 1.2rem);
     transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    margin: 0.5rem;
 }
 
 .indice a:hover {
@@ -162,57 +162,144 @@ section ul {
     transform: scale(1.1);
 }
 
-
-
-/*Seccion de Contacto*/
-.miembro01 {
-    margin-left: 0;
-    padding: 20px;
-    position: relative;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-bottom: 20px;
-    width: 80%;
+/* Sección de Equipo*/
+.equipo {
+    padding: 2rem 0;
 }
 
-.miembro02 {
-    margin-left: 10%;
-    padding: 20px;
+/* Contenedor principal */
+.contenedor-equipo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Título de la sección */
+.contenedor-equipo h2 {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    color: #f8c00b;
+    text-align: center;
+    margin-bottom: 2rem;
     position: relative;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-bottom: 20px;
-    width: 80%;
+    padding-bottom: 1rem;
+}
+
+.contenedor-equipo h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #f8c00b;
+}
+
+/* Grid para las tarjetas */
+.grid-equipo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilos base para todas las tarjetas de miembros */
+.miembro01, .miembro02, .miembro03 {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    margin-left: 0;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
 }
 
 .miembro03 {
-    margin-left: 20%;
-    padding: 20px;
-    position: relative;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-bottom: 20px;
-    width: 75%;
+    grid-column: 1 / span 2; 
+    justify-self: center; /* Center the card horizontally */
+    margin-top: 1rem; 
 }
 
-.miembro01 h3,
-.miembro02 h3,
-.miembro03 h3 {
+/* Efectos de hover */
+.miembro01:hover, .miembro02:hover, .miembro03:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Barra de color superior */
+.miembro01::before, .miembro02::before, .miembro03::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ffbf00, #dea004);
+}
+
+/* Elementos dentro de las tarjetas */
+.miembro01 h3, .miembro02 h3, .miembro03 h3 {
     color: #333;
-    margin-bottom: 10px;
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
-.miembro01 p,
-.miembro02 p,
-.miembro03 p {
-    color: #666;
-    margin-bottom: 15px;
+.miembro01 p, .miembro02 p, .miembro03 p {
+    margin-bottom: 1.25rem;
 }
+
+.miembro01 textarea, .miembro02 textarea, .miembro03 textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #555;
+    font-size: 0.9rem;
+    resize: none;
+    transition: border-color 0.3s ease;
+    cursor: default;
+    height: auto;
+    overflow: hidden;
+}
+
+/* Estilo de los enlaces */
+.miembro01 a, .miembro02 a, .miembro03 a {
+    display: inline-flex;
+    align-items: center;
+    color: #ffbf00;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.miembro01 a:hover, .miembro02 a:hover, .miembro03 a:hover {
+    color: #b59100;
+}
+
+.miembro01 a svg, .miembro02 a svg, .miembro03 a svg {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.miembro01 a:hover svg, .miembro02 a:hover svg, .miembro03 a:hover svg {
+    transform: translateX(3px);
+}
+
+
 textarea {
-    width: 80%;
+    width: 100%;
     max-width: 340px;
     height: 20px;
     padding: 10px;
@@ -221,10 +308,11 @@ textarea {
     font-size: 1em;
     resize: none;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 textarea:focus {
-    outline: 2px solid #000000; 
+    outline: 2px solid #000000;
 }
 
 p {
@@ -232,14 +320,13 @@ p {
     color: #555;
 }
 
-/*-------------------------------*/
 section ul {
     list-style: disc;
     padding-left: 2rem;
 }
 
 footer {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: #333;
     color: white;
     text-align: center;
@@ -248,6 +335,7 @@ footer {
     bottom: 0;
     width: 100%;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 100;
 }
 
 footer p {
@@ -256,32 +344,91 @@ footer p {
     font-size: 0.9rem;
 }
 
-/*Para que se vea bien en otros dispositivos(responsive web)*/
+/* Media queries actualizados para diferentes tamaños de pantalla */
+/* Tablets */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav ul li {
-        margin: 0 0.5rem;
-    }
-
-    nav ul li a {
-        font-size: 0.9rem;
-    }
-
-    main {
+    header {
         padding: 1rem;
     }
-
-    section h2 {
-        font-size: 1.5rem;
+    
+    main {
+        padding: 1rem;
+        width: 95%;
+    }
+    .grid-equipo {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .team-member,
-    .team-member02,
-    .team-member03 {
+    .miembro01, .miembro02, .miembro03 {
+        width: 100%;
+        max-width: 100%;
+        justify-self: center;
         margin-left: 0;
-        width: 90%;
+        margin-right: 0;
+    }
+
+    .miembro03 {
+        grid-column: 1;
+    }
+    
+    .indice {
+        width: 95%;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    header {
+        min-height: 100px;
+        padding: 0.8rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 0.3rem 0;
+    }
+    
+    .sol-contenido {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 0 0 30px 30px;
+        margin-top: -5px;
+    }
+    
+    textarea {
+        max-width: 100%;
+    }
+    
+    main {
+        margin-bottom: 4rem;
+    }
+    .contenedor-equipo {
+        padding: 0 1rem;
+    }
+    
+    .miembro01, .miembro02, .miembro03 {
+        padding: 1.25rem;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 320px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .sol-contenido h1 {
+        font-size: 1.3rem;
+    }
+    
+    .sol-contenido p {
+        font-size: 0.8rem;
     }
 }

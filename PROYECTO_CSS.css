@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    overflow-x: hidden;
 }
 
 header {
@@ -32,6 +33,7 @@ header p {
 /* Barra de navegación */
 nav {
     height: auto;
+    overflow: hidden;
     background: #ffbf00;
     padding: 0.5rem;
     color: white;
@@ -331,7 +333,8 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-    position: fixed;
+    position: relative;
+    margin-top: 2rem;
     bottom: 0;
     width: 100%;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
@@ -357,6 +360,7 @@ footer p {
     }
     .grid-equipo {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
         max-width: 500px;
         margin-left: auto;
         margin-right: auto;
@@ -365,13 +369,16 @@ footer p {
     .miembro01, .miembro02, .miembro03 {
         width: 100%;
         max-width: 100%;
+        box-sizing: border-box;
         justify-self: center;
+        margin: 0 auto;
         margin-left: 0;
         margin-right: 0;
     }
 
     .miembro03 {
         grid-column: 1;
+        margin-top: 0
     }
     
     .indice {
@@ -421,7 +428,12 @@ footer p {
 /* Pantallas muy pequeñas */
 @media (max-width: 320px) {
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 0.2rem;
     }
     
     .sol-contenido h1 {
@@ -430,5 +442,14 @@ footer p {
     
     .sol-contenido p {
         font-size: 0.8rem;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    .grid-equipo {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        flex-wrap: wrap;
     }
 }

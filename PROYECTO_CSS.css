@@ -33,6 +33,7 @@ header p {
 /* Barra de navegación */
 nav {
     height: auto;
+    width: auto;
     overflow: hidden;
     background: #ffbf00;
     padding: 0.5rem;
@@ -345,6 +346,7 @@ footer p {
     margin: 0;
     color: white;
     font-size: 0.9rem;
+    line-height: 1.3;
 }
 
 /* Media queries actualizados para diferentes tamaños de pantalla */
@@ -422,6 +424,10 @@ footer p {
     
     .miembro01, .miembro02, .miembro03 {
         padding: 1.25rem;
+    }
+
+    footer {
+        padding: 0.5rem;
     }
 }
 

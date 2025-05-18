@@ -32,8 +32,114 @@
 
     <main>
         <section id="desarrollo">
-            <h2>Desarrollo del Proyecto</h2>
-            <p>Fases del proyecto.</p>
+            <h1>7.Desarrollo del Proyecto</h1>
+            <h2>7.1 Arquitectura de la aplicación</h2>
+
+            <article>
+                <h3>Tecnologías y componentes principales</h3>
+                <p>
+                    La arquitectura de la aplicación podría ser desarrollada con tecnologías 
+                    como Spring Boot para el backend, JavaScript, HTML y CSS para el frontend, 
+                    y bases de datos para el almacenamiento de datos.
+                </p>
+
+                <p>
+                    El frontend será una interfaz interactiva desarrollada con HTML, CSS, y JavaScript. 
+                    Utilizará AJAX para realizar peticiones al servidor sin necesidad de recargar la página. 
+                    Los usuarios interactuarán a través de un navegador web, e ingresarán datos como la vestimenta, fototipo de piel y opcionalmente, la dieta que lleva.
+                </p>
+
+                <p>
+                    Esta interfaz presentará información al usuario como la cantidad de vitamina D producida en ese día, 
+                    el historial de exposición y las recomendaciones personalizadas a cada usuario.
+                </p>
+
+                <p>
+                    El backend se desarrollará utilizando Spring Boot, un framework basado en Java que facilita la creación de aplicaciones web RESTful. 
+                    Spring Boot manejará toda la lógica de la aplicación, incluyendo el cálculo de la vitamina D en función de la geolocalización, la radiación solar, 
+                    consultando los datos necesarios a las APIs externas. También se encargará del registro de los datos del usuario en la base de datos y de la creación de endpoints REST 
+                    que el frontend utilizará para enviar y recibir información.
+                </p>
+
+                <p>
+                    El servidor gestionará la autenticación y autorización de los usuarios, 
+                    y almacenará en la base de datos la información sobre el historial de exposición solar de cada usuario, el fototipo de piel, 
+                    la dieta y las recomendaciones personales.
+                </p>
+
+                <p>
+                    Se utilizará una base de datos como PostgreSQL o MySQL para almacenar los datos en la aplicación. 
+                    Spring Boot facilitará este proceso a través de Spring Data, lo que permitirá realizar operaciones de manera eficiente.
+                </p>
+
+                <p>
+                    La aplicación utilizará APIs de geolocalización como Google Maps API o Geolocation API para obtener la ubicación del usuario. 
+                    Esta información será utilizada para calcular los niveles de radiación UV en función de la ubicación y hora del día. 
+                    También se utilizarán APIs para obtener datos meteorológicos como la intensidad de radiación para obtener un cálculo más preciso de la vitamina D.
+                </p>
+
+                <h3>Funciones de los componentes</h3>
+
+                <p><strong>Funciones del frontend:</strong></p>
+
+                    <ul>
+                        <li>Formulario de entrada de datos para registrar la vestimenta, fototipo y dieta.</li>
+                        <li>Interfaz de visualización para mostrar la cantidad de vitamina D producida, las recomendaciones de vestimenta y la radiación UV en tiempo real.</li>
+                        <li>Notificaciones de alertas en tiempo real para recomendar al usuario aplicar protector solar o ajustar su vestimenta según las condiciones del sol.</li>
+                    </ul>
+
+                <p><strong>Funciones del backend:</strong></p>
+
+                    <ul>
+                        <li>Gestiona la lógica de la aplicación y la interacción con las APIs externas.</li>
+                        <li>Calcula la vitamina D y almacena los datos del usuario en la base de datos.</li>
+                    </ul>
+
+                <p><strong>La base de datos almacenará:</strong></p>
+
+                    <ul>
+                        <li><strong>Usuarios:</strong> Nombre, dirección de correo electrónico, preferencias notificación y otros datos personales.</li>
+                        <li><strong>Exposición solar:</strong> Fecha, hora, duración y ubicación de cada exposición.</li>
+                        <li><strong>Vestimenta:</strong> Registro de la ropa que el usuario lleva puesta durante la exposición.</li>
+                        <li><strong>Historial de recomendaciones:</strong> Registro de las recomendaciones de vestimenta y protección solar dadas al usuario.</li>
+                        <li><strong>Dieta:</strong> Registro de todas las comidas ingeridas diarias y semanales.</li>
+                    </ul>
+                    <h3>Flujo de datos y funcionamiento</h3>
+
+                    <ol>
+                        <li>El usuario ingresa datos en el frontend como vestimenta, fototipo de piel y dieta.</li>
+                        <br>
+                        <li>El frontend envía los datos del usuario al backend mediante una solicitud Rest.</li>
+                        <br>
+                        <li>El backend consulta el historial de exposiciones solares y recomendaciones previas del usuario.</li>
+                        <br>
+                        <li>El backend consulta las APIs externas como la API de geolocalización para obtener la ubicación y la API meteorológica para obtener datos de radiación UV.</li>
+                        <br>
+                        <li>El backend realiza los cálculos de vitamina D y genera recomendaciones personalizadas.</li>
+                        <br>
+                        <li>El backend envía la información al frontend, incluyendo la vitamina D, radiación UV y recomendaciones.</li>
+                        <br>
+                        <li>El frontend muestra los resultados, recomendaciones y alertas al usuario.</li>
+                        <br>
+                        <li>El backend actualiza los datos de exposición solar y recomendaciones en la base de datos.</li>
+                    </ol>
+
+                    <figure style="text-align: center;">
+                    <img src="Recursos/" 
+                        alt="Arquitectura de la aplicación" 
+                        style="max-width: 100%; height: auto;">
+                    <figcaption style="
+                        display: inline-block;
+                        text-align: left;
+                        font-size: 0.9em;
+                        color: black;
+                        margin-top: 8px;
+                        max-width: 600px;">
+                        <strong>Figura 4.</strong> Arquitectura de la aplicación<br>
+                        Fuente: Iván Delgado Alcoebenda
+                    </figcaption>
+                    </figure>
+            </article>
         </section>
     </main>
 <footer>

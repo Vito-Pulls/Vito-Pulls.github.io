@@ -125,20 +125,158 @@
                     </ol>
 
                     <figure style="text-align: center;">
-                    <img src="Recursos/" 
+                    <img src="Recursos/Arquitectura de la aplicación.png" 
                         alt="Arquitectura de la aplicación" 
                         style="max-width: 100%; height: auto;">
-                    <figcaption style="
-                        display: inline-block;
-                        text-align: left;
-                        font-size: 0.9em;
-                        color: black;
-                        margin-top: 8px;
-                        max-width: 600px;">
-                        <strong>Figura 4.</strong> Arquitectura de la aplicación<br>
-                        Fuente: Iván Delgado Alcoebenda
-                    </figcaption>
+                        <figcaption style="
+                            display: inline-block;
+                            text-align: center;
+                            font-size: 0.9em;
+                            color: black;
+                            margin-top: 8px;
+                            max-width: 600px;">
+                            <strong>Figura 4.</strong> Arquitectura de la aplicación<br>
+                            Fuente: Iván Delgado Alcoebenda
+                        </figcaption>
                     </figure>
+                    <br>
+                    <h2>7.2. Notificaciones automatizadas</h2>
+                        <p>
+                        Las notificaciones se gestionarán en el backend utilizando Spring Boot y un sistema de colas de mensajes o eventos programados,
+                        de esta manera el servidor notificará al frontend sin necesidad de que el usuario tenga que actualizar la página.
+                        </p>
+
+                        <p>
+                        Utilizaremos Spring Scheduler para ejecutar tareas programadas, como enviar recordatorios periódicos o alertas de exposición solar. 
+                        Las notificaciones pueden llegar a los usuarios a través del correo electrónico o mensajes dentro de la propia interfaz de la aplicación.
+                        </p>
+
+                    <h2>7.2.1. Registro de vestimenta</h2>
+
+                        <p>
+                        La vestimenta juega un papel clave en la protección solar, y al registrar qué ropa lleva puesta el usuario, 
+                        el sistema puede calcular la efectividad de la protección contra la radiación UV.
+                        </p>
+
+                    <h3>Funcionamiento del registro de vestimenta</h3>
+
+                    <ol>
+                        <li>
+                        En la interfaz del usuario se diseñará un formulario sencillo donde los usuarios ingresarán el tipo de ropa que están usando en ese momento. 
+                        Este formulario incluirá campos de selección para diferentes categorías de vestimenta, por ejemplo, 
+                        “Camisa de manga larga”, “Pantalones largos”, “Sombrero o gorra”, “Protección solar”, etc.
+                        </li>
+                         <br>
+                        <li>
+                        Una vez el usuario ingresa su vestimenta, los datos serán enviados al backend mediante una solicitud POST que será manejada por Spring Boot. 
+                        La información será almacenada en la base de datos utilizando la API (Java Persistence) para asegurar todos los datos.
+                        </li>
+                         <br>
+                        <li>
+                        Con los datos de la vestimenta, el backend realizará los cálculos que determinen la cantidad de protección que ofrece la ropa del usuario. 
+                        Esto puede hacerse utilizando tablas de factores de protección basados en estudios de protección UV. También se tendrá en cuenta el material, 
+                        ya que se ha demostrado que una camisa de un material denso ofrecerá más protección que una camisa ligera de algodón.
+                        </li>
+                         <br>
+                        <li>
+                        Una vez se haya registrado la vestimenta, 
+                        el sistema podrá generar recomendaciones personalizadas sobre si el usuario debiera cubrirse 
+                        más o si necesita aplicar protector solar adicional en función de los cálculos sobre la exposición solar realizados por el backend.
+                        Si el usuario se encuentra en una zona de alta radiación UV, se le enviará un mensaje de advertencia para que se ponga ropa que cubra las zonas expuestas o utilice protector solar.
+                        </li>
+                    </ol>
+                    <h2>7.2.2. Integración del reloj y sensor de luz</h2>
+
+                        <p>
+                        La integración de un reloj inteligente y sensores de luz es una de las piezas clave para obtener datos de la exposición solar con la mayor precisión posible, 
+                        ya que estos pueden captar en tiempo real si el usuario se está exponiendo directamente a la luz. Si un usuario se encuentra en un punto geográfico donde las APIs registran que hay sol, 
+                        pero el usuario está bajo la sombra, no se estaría calculando de forma óptima los niveles reales aproximados de síntesis de vitamina D.
+                        </p>
+
+                        <p>
+                        Los relojes inteligentes como los de Apple o Fitbit pueden enviar información sobre la actividad física del usuario y su exposición al sol. 
+                        Estos relojes son capaces de registrar la cantidad de tiempo que el usuario pasa al aire libre gracias a su sensor de luz y otras herramientas que permiten medir la frecuencia cardíaca, 
+                        o los pasos dados. Sin embargo, estos sensores no miden la radiación UV directamente y no distinguen entre luz natural y luz solar.
+                        </p>
+
+                        <p>
+                        La forma más eficiente de conectar un reloj inteligente con el backend de la aplicación es mediante una aplicación móvil intermedia. 
+                        El reloj se vincula con la app instalada en el smartphone del usuario utilizando tecnología Bluetooth, lo que permite que el reloj recoja datos en tiempo real,
+                        como la exposición solar a través de su sensor de luz o UV.
+                        </p>
+
+                        <p>
+                        Estos datos son transmitidos desde el reloj al móvil, y luego, la app móvil envía la información al backend usando una API REST. 
+                        Esta solución mejora la fiabilidad de la transmisión de datos y reduce el consumo energético del reloj al delegar la comunicación continua al móvil. 
+                        Además, esta arquitectura es compatible con la mayoría de los dispositivos disponibles en el mercado, lo que facilita la implementación real del sistema descrito en el proyecto.
+                        </p>
+
+                    <h3>Posible integración de sensores UV</h3>
+
+                        <p>
+                        Actualmente existen sensores compactos como el VEML6075 o el SI1145, 
+                        que pueden medir la radiación ultravioleta en tiempo real y proporcionar datos más exactos sobre la exposición del usuario al sol. Si un reloj inteligente incorporase este tipo de sensor,
+                         podría detectar la intensidad real de la radiación UV para lograr una mayor precisión junto a los factores mencionados en puntos anteriores.
+                        </p>
+
+                        <p>
+                        Para poder integrar un sensor de radiación UV en un reloj inteligente, 
+                        debemos tener en cuenta varios aspectos importantes a la hora de instalarlo:
+                        </p>
+
+                        <ul>
+                            <li>Los sensores UV consumen energía y los relojes inteligentes son dispositivos pequeños con baterías limitadas. El sensor UV debe ser de bajo consumo energético para que no agote la batería rápidamente.</li>
+                            <li>El procesador del reloj tiene que ser capaz de procesar los datos del sensor UV y calcular cuánta radiación está recibiendo el usuario.</li>
+                            <li>Para que el backend sea capaz de procesar todos los datos y realizar cálculos precisos, necesitará que el reloj tenga conectividad con este.</li>
+                        </ul>
+
+                        <h3>Limitaciones de la integración</h3>
+
+                        <ul>
+                            <li>El sensor debe estar expuesto a la luz solar directa. Si el usuario está bajo la sombra, usa mangas largas o el reloj está cubierto, los valores de la radiación no podrían indicar la radiación real que está recibiendo.</li>
+                            <li>Los sensores UV pueden requerir una cantidad de energía adicional, lo que podría reducir la autonomía del reloj.</li>
+                        </ul>
+
+                        <p>
+                        Para compensar el gasto energético, 
+                        el reloj tendría que incluir una pantalla con células fotovoltaicas integradas para aprovechar la luz solar 
+                        para ampliar la duración de la batería como las Power Glass o las Garmin Instinct 2 Solar de la marca Garmin.
+                        </p>
+
+                        <p>
+                            Hoy en día, no hay ningún reloj inteligente en el mercado que integre sensores específicos de radiación UV de manera estándar, 
+                            por lo tanto, la implementación de estos sensores está en una fase experimental. 
+                            Pese a esta situación, la integración de sensores UV es muy viable con el estudio realizado en este proyecto.
+                        </p>
+
+                        <h2>7.3. Flujo de trabajo con el reloj</h2>
+
+                            <p>
+                            Para que la aplicación funcione correctamente, se deberá seguir el siguiente flujo de trabajo, donde el reloj, 
+                            el frontend, el backend con las APIs y el usuario, trabajan de forma integrada y coordinada:
+                            </p>
+
+                            <ol>
+                            <li>El usuario ingresa datos en el frontend como vestimenta, fototipo de piel y dieta.</li>
+                            <br>
+                            <li>El frontend envía los datos del usuario al backend mediante una solicitud REST.</li>
+                            <br>
+                            <li>El backend consulta el historial de exposiciones solares y recomendaciones previas del usuario en la base de datos.</li>
+                            <br>
+                            <li>El backend consulta las APIs externas como la API de geolocalización para obtener la ubicación y la API meteorológica para obtener datos de radiación UV.</li>
+                            <br>
+                            <li>El reloj inteligente vinculado con la aplicación móvil mide la radiación UV en tiempo real y envía los datos al móvil mediante Bluetooth.</li>
+                            <br>
+                            <li>La aplicación móvil transmite esta información al backend a través de una API REST para ajustar los cálculos personalizados de síntesis de vitamina D.</li>
+                            <br>
+                            <li>El backend integra los datos del reloj, las APIs externas y el historial del usuario para realizar los cálculos personalizados de síntesis de vitamina D.</li>
+                            <br>
+                            <li>El backend genera recomendaciones personalizadas y envía los resultados al frontend, incluyendo los niveles de vitamina D, la radiación UV real y los avisos.</li>
+                            <br>
+                            <li>El frontend muestra los resultados, recomendaciones y alertas sobre su exposición solar y estado de vitamina D.</li>
+                            <br>
+                            <li>El backend actualiza los datos de exposición solar y recomendaciones en la base de datos.</li>
+                            </ol>
             </article>
         </section>
     </main>

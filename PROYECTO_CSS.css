@@ -210,7 +210,7 @@ section ul {
 }
 
 /* Estilos base para todas las tarjetas de miembros */
-.miembro01, .miembro02, .miembro03 {
+.miembro01, .miembro02, .miembro03 , .miembro04{
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -225,20 +225,20 @@ section ul {
     text-align: center;
 }
 
-.miembro03 {
+.miembro03 ,.miembro04 {
     grid-column: 1 / span 2; 
     justify-self: center; /* Center the card horizontally */
     margin-top: 1rem; 
 }
 
 /* Efectos de hover */
-.miembro01:hover, .miembro02:hover, .miembro03:hover {
+.miembro01:hover, .miembro02:hover, .miembro03:hover , .miembro04:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Barra de color superior */
-.miembro01::before, .miembro02::before, .miembro03::before {
+.miembro01::before, .miembro02::before, .miembro03::before , .miembro04::before {
     content: '';
     position: absolute;
     top: 0;
@@ -249,18 +249,18 @@ section ul {
 }
 
 /* Elementos dentro de las tarjetas */
-.miembro01 h3, .miembro02 h3, .miembro03 h3 {
+.miembro01 h3, .miembro02 h3, .miembro03 h3 , .miembro04 h3 {
     color: #333;
     font-size: clamp(1.2rem, 3vw, 1.4rem);
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
-.miembro01 p, .miembro02 p, .miembro03 p {
+.miembro01 p, .miembro02 p, .miembro03 p , .miembro04 p {
     margin-bottom: 1.25rem;
 }
 
-.miembro01 textarea, .miembro02 textarea, .miembro03 textarea {
+.miembro01 textarea, .miembro02 textarea, .miembro03 textarea , .miembro04 textarea {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid #eaeaea;
@@ -276,7 +276,7 @@ section ul {
 }
 
 /* Estilo de los enlaces */
-.miembro01 a, .miembro02 a, .miembro03 a {
+.miembro01 a, .miembro02 a, .miembro03 a , .miembro04 a {
     display: inline-flex;
     align-items: center;
     color: #ffbf00;
@@ -286,16 +286,16 @@ section ul {
     margin-top: 0.5rem;
 }
 
-.miembro01 a:hover, .miembro02 a:hover, .miembro03 a:hover {
+.miembro01 a:hover, .miembro02 a:hover, .miembro03 a:hover , .miembro04 a:hover {
     color: #b59100;
 }
 
-.miembro01 a svg, .miembro02 a svg, .miembro03 a svg {
+.miembro01 a svg, .miembro02 a svg, .miembro03 a svg , .miembro04 a svg {
     margin-left: 5px;
     transition: transform 0.3s ease;
 }
 
-.miembro01 a:hover svg, .miembro02 a:hover svg, .miembro03 a:hover svg {
+.miembro01 a:hover svg, .miembro02 a:hover svg, .miembro03 a:hover svg , .miembro04 a:hover svg {
     transform: translateX(3px);
 }
 

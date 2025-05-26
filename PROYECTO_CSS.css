@@ -27,7 +27,7 @@ header p {
     margin: 0.5rem 0 0;
     font-size: clamp(0.8rem, 2vw, 1rem);
     color: white;
-    font-family: cursive;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Barra de navegación */
@@ -136,9 +136,8 @@ section ul {
     line-height: 1.6;
 }
 
-/*indice*/
+/* indice */
 .indice {
-    text-align: center;
     margin: 20px auto;
     padding: 5%;
     width: 90%;
@@ -146,6 +145,12 @@ section ul {
     background: linear-gradient(135deg, #ffbf00, #dea004);
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+}
+
+.indice > ul > li {
+    text-align: left;
+    margin: 1rem 0;
 }
 
 .indice a {
@@ -153,7 +158,7 @@ section ul {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
     font-weight: bold;
-    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-size: clamp(1.1rem, 3vw, 1.2rem); /* tamaño para puntos principales */
     transition: color 0.3s ease, transform 0.3s ease;
     display: inline-block;
     margin: 0.5rem;
@@ -162,6 +167,18 @@ section ul {
 .indice a:hover {
     color: #ffc400;
     transform: scale(1.1);
+}
+
+/* Tamaños de fuente para subniveles */
+.indice ul ul > li > a {
+    font-size: clamp(0.9rem, 2.5vw, 1rem); /* subpuntos como 4.1, 5.1... */
+    font-weight: bold;
+    
+}
+
+.indice ul ul ul > li > a {
+    font-size: clamp(0.8rem, 2vw, 0.95rem); /* sub-subpuntos como 7.2.1... */
+    font-weight: bold;
 }
 
 /* Sección de Equipo*/

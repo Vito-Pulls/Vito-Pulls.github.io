@@ -112,7 +112,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 - **Issues**: [https://github.com/Vito-Pulls/Vito-Pulls.github.io/issues](https://github.com/Vito-Pulls/Vito-Pulls.github.io/issues)
 
 ## 🙏 Agradecimientos
-
+- Alfonso Muñoz 
 - Investigaciones de Michael F. Holick sobre síntesis de vitamina D
 - Organización Mundial de la Salud por los datos de índice UV
 - Comunidad científica por la investigación en fotobiología
